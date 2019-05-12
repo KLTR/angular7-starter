@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import 'styles/buttons.scss';
+@import 'styles/margins.scss';
+@import 'styles/paddings.scss';
+@import 'styles/mixins.scss';
+@include ca-paddings(0, 50, 1px);
+@include ca-margins(0, 50, 1px);
+
+.full-height-width {
+  @include full-height-width();
+}
