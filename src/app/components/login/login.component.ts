@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   createForm() {
+    // tslint:disable-next-line:max-line-length
     const emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     this.formGroup = this.formBuilder.group({
       email: [null, [Validators.required, Validators.pattern(emailregex)], this.checkInUseEmail],
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   setChangeValidate() {
     this.formGroup.get('validate').valueChanges.subscribe(validate => {
-      if (validate == '1') {
+      if (validate === '1') {
         this.formGroup.get('name').setValidators([Validators.required, Validators.minLength(3)]);
         this.titleAlert = 'You need to specify at least 3 characters';
       } else {
